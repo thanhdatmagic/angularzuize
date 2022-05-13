@@ -25,7 +25,7 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
   getRecipes() {
-    return this.recipes.slice(); //Return copy array instead of real array
+    return this.recipes;
   }
 
   constructor(private slService: ShoppingListService) {}
@@ -35,5 +35,17 @@ export class RecipeService {
 
   getRecipe(index: number) {
     return this.recipes[index];
+  }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+  }
+
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1);
   }
 }
