@@ -11,12 +11,9 @@
     <p class="list-group-item-text">
       {{ recipe.description }}
     </p>
+    <p class="list-group-item-text">
+      {{ recipe.imagePath }}
+    </p>
   </div>
-  <span>
-    <img
-      [src]="recipe.imagePath"
-      alt="{{ recipe.name }}"
-      style="max-height: 75px"
-    />
-  </span>
+  
 </a>
